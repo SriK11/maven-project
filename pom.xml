@@ -20,28 +20,37 @@
 
 	<build>
 		<plugins>
+			
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>2.2.1</version>
-				<configuration>
-					<deploymentType>arm</deploymentType>
-					<target>anypoint.mulesoft.com</target>
-					<targetType>server</targetType>
-					<username>srilakshmi_kilaru642</username>
-					<password>Sri_ww_1</password>
-					<environment>Production</environment>
-				</configuration>
-				<executions>
-					<execution>
-						<id>deploy</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+<groupId>org.mule.tools.maven</groupId>
+<artifactId>mule-maven-plugin</artifactId>
+<version>2.0</version>
+<configuration>
+<deploymentType>cloudhub</deploymentType>
+<muleVersion>3.8.4</muleVersion>
+<username>srilakshmi_kilaru642</username>
+<password>Sri_ww_1</password>
+<redeploy>true</redeploy>
+<environment>Production</environment>
+<workerType>Micro</workerType>
+</configuration>
+<executions>
+<execution>
+<id>deploy</id>
+<phase>deploy</phase>
+<goals>
+<goal>deploy</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-deploy-plugin</artifactId>
+<configuration>
+<skip>true</skip>
+</configuration>
+</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-app-maven-plugin</artifactId>
