@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mulesoft.training</groupId>
-	<artifactId>maven-project-sk</artifactId>
+	<artifactId>maven-project-sri</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule</packaging>
 	<name>Mule maven-project Application</name>
@@ -20,37 +20,30 @@
 
 	<build>
 		<plugins>
-			
+
 			<plugin>
-<groupId>org.mule.tools.maven</groupId>
-<artifactId>mule-maven-plugin</artifactId>
-<version>2.0</version>
-<configuration>
-<deploymentType>cloudhub</deploymentType>
-<muleVersion>3.8.4</muleVersion>
-<username>srilakshmi_kilaru642</username>
-<password>Sri_ww_1</password>
-<redeploy>true</redeploy>
-<environment>Production</environment>
-<workerType>Micro</workerType>
-</configuration>
-<executions>
-<execution>
-<id>deploy</id>
-<phase>deploy</phase>
-<goals>
-<goal>deploy</goal>
-</goals>
-</execution>
-</executions>
-</plugin>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-deploy-plugin</artifactId>
-<configuration>
-<skip>true</skip>
-</configuration>
-</plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
+					<deploymentType>cloudhub</deploymentType>
+					<muleVersion>3.8.4</muleVersion>
+					<username>srilakshmi_kilaru642</username>
+					<password>Sri_ww_1</password>
+					<redeploy>true</redeploy>
+					<environment>Production</environment>
+					<businessGroup>LnD</businessGroup>
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-app-maven-plugin</artifactId>
@@ -90,6 +83,12 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>localSnap</id>
+			<url>file:///C:\temp\</url>
+		</repository>
+	</distributionManagement>
 	<!-- Mule Dependencies -->
 	<dependencies>
 		<!-- Xml configuration -->
@@ -211,33 +210,34 @@
 	</dependencies>
 
 	<repositories>
-<repository>
-<id>Central</id>
-<name>Central</name>
-<url>http://repo1.maven.org/maven2/</url>
-<layout>default</layout>
-</repository>
-<repository>
-<id>mulesoft-releases</id>
-<name>MuleSoft Releases Repository</name>
-<url>http://repository.mulesoft.org/releases/</url>
-<layout>default</layout>
-</repository>
-</repositories>
-<pluginRepositories>
-<pluginRepository>
-<id>mulesoft-release</id>
-<name>mulesoft release repository</name>
-<layout>default</layout>
-<url>http://repository.mulesoft.org/releases/</url>
-<snapshots>
-<enabled>false</enabled>
-</snapshots>
-</pluginRepository>
-<pluginRepository>
-<id>mule-public</id>
-<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
-</pluginRepository>
-</pluginRepositories>
+		<repository>
+			<id>Central</id>
+			<name>Central</name>
+			<url>http://repo1.maven.org/maven2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases Repository</name>
+			<url>http://repository.mulesoft.org/releases/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>mulesoft-release</id>
+			<name>mulesoft release repository</name>
+			<layout>default</layout>
+			<url>http://repository.mulesoft.org/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>mulesoft-snapshots</id>
+			<name>MuleSoft Snapshot Repository</name>
+			<url>http://repository.mulesoft.org/snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
