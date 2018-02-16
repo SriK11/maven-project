@@ -13,7 +13,7 @@ public class HelloMavenTest extends FunctionalTestCase {
     // mavenFlow returns Hello Maven
     @Test
     public void mavenFlowReturnsHelloMaven() throws Exception {
-        runFlowAndExpect("mavenFlow", "Hello Maven");
+        runFlowAndExpect("mavenFlow", "Hello Mule");
     }
     
     /*@Test
