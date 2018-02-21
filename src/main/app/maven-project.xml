@@ -28,6 +28,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
 	<flow name="mavenFlow">
 		<http:listener config-ref="HTTP_Listener_Configuration" path="/hello" doc:name="HTTP" />
 		<set-payload value="#['Hello Mule']" doc:name="Set Payload" />
+        <logger level="INFO" doc:name="Logger"/>
 	</flow>
 	
 	<!-- <flow name="retrieveFlights">
